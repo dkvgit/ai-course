@@ -1,4 +1,7 @@
+from pathlib import Path
 
+# Обновлённый HTML с темнее и статичным фоном, фиксированный цвет
+dark_static_html = """
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -109,3 +112,8 @@
   </script>
 </body>
 </html>
+"""
+
+path = Path("/mnt/data/index.html")
+path.write_text(dark_static_html, encoding='utf-8')
+path.name
