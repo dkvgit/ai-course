@@ -3,53 +3,69 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Курс по ИИ — AI Course</title>
+  <title>AI Course — ChatGPT, Gemini, Grok и другие</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Практический курс по ChatGPT, Grok, Gemini и другим LLM для начинающих. Освой современные AI-инструменты и автоматизируй задачи.">
+  <link rel="icon" href="https://www.svgrepo.com/show/382106/ai.svg" type="image/svg+xml">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #1a1a1a, #2c2c2c);
-      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0e0e0e;
+      color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       text-align: center;
-      padding: 2em;
+      padding: 1.5rem;
     }
-    .lang-switch {
-      position: absolute;
-      top: 1em;
-      right: 1em;
-    }
-    .lang-switch button {
-      background: #444;
-      color: white;
-      border: none;
-      padding: 0.5em 1em;
-      margin: 0 0.2em;
-      cursor: pointer;
-    }
-    .card {
-      max-width: 600px;
-      margin: auto;
-      background: #333;
-      border-radius: 16px;
-      padding: 2em;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    .container {
+      max-width: 720px;
     }
     h1 {
-      font-size: 2em;
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #00ffe7, #00bfff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     p {
-      line-height: 1.6em;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: #ccc;
     }
-    .telegram-button {
+    .btn {
       display: inline-block;
-      margin-top: 2em;
-      background-color: #0088cc;
-      color: white;
-      padding: 1em 2em;
-      border-radius: 8px;
+      padding: 0.9rem 2rem;
+      background: #0088cc;
+      color: #fff;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #0077b3;
+    }
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+    }
+    .lang-switch button {
+      background: #1c1c1c;
+      border: 1px solid #444;
+      color: #eee;
+      padding: 0.4rem 0.8rem;
+      margin-left: 0.4rem;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .lang-switch button:hover {
+      background: #333;
     }
   </style>
 </head>
@@ -58,18 +74,21 @@
     <button onclick="setLang('ru')">RU</button>
     <button onclick="setLang('en')">EN</button>
   </div>
-  <div class="card">
+
+  <div class="container">
     <div id="content-ru">
-      <h1>Освой ChatGPT, Gemini, Grok и другие LLM</h1>
-      <p>Практический курс для начинающих: автоматизация, контент, ИИ-инструменты и проекты. Присоединяйся и научись использовать искусственный интеллект на практике.</p>
-      <a class="telegram-button" href="https://t.me/neuronica_news" target="_blank">Перейти в Telegram</a>
+      <h1>Освой ChatGPT, Gemini, Grok и другие AI-модели</h1>
+      <p>Быстрый и практичный курс для тех, кто хочет понять, как использовать искусственный интеллект в реальной жизни. Без теории — только практика.</p>
+      <a href="https://t.me/neuronica_news" target="_blank" class="btn">Перейти в Telegram</a>
     </div>
-    <div id="content-en" style="display:none;">
-      <h1>Master ChatGPT, Gemini, Grok and Other LLMs</h1>
-      <p>A hands-on course for beginners: automation, content creation, AI tools, and real-world projects. Join and learn how to apply AI in practice.</p>
-      <a class="telegram-button" href="https://t.me/neuronica_news" target="_blank">Go to Telegram</a>
+
+    <div id="content-en" style="display: none;">
+      <h1>Master ChatGPT, Gemini, Grok and other AI models</h1>
+      <p>A fast and practical course for beginners who want to learn how to use artificial intelligence in real life. No fluff — just hands-on practice.</p>
+      <a href="https://t.me/neuronica_news" target="_blank" class="btn">Go to Telegram</a>
     </div>
   </div>
+
   <script>
     function setLang(lang) {
       document.getElementById('content-ru').style.display = lang === 'ru' ? 'block' : 'none';
