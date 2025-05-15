@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Курс по ИИ — AI Course</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1a1a1a, #2c2c2c);
+      color: white;
+      text-align: center;
+      padding: 2em;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+    }
+    .lang-switch button {
+      background: #444;
+      color: white;
+      border: none;
+      padding: 0.5em 1em;
+      margin: 0 0.2em;
+      cursor: pointer;
+    }
+    .card {
+      max-width: 600px;
+      margin: auto;
+      background: #333;
+      border-radius: 16px;
+      padding: 2em;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-size: 2em;
+    }
+    p {
+      line-height: 1.6em;
+    }
+    .telegram-button {
+      display: inline-block;
+      margin-top: 2em;
+      background-color: #0088cc;
+      color: white;
+      padding: 1em 2em;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-switch">
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+  <div class="card">
+    <div id="content-ru">
+      <h1>Освой ChatGPT, Gemini, Grok и другие LLM</h1>
+      <p>Практический курс для начинающих: автоматизация, контент, ИИ-инструменты и проекты. Присоединяйся и научись использовать искусственный интеллект на практике.</p>
+      <a class="telegram-button" href="https://t.me/neuronica_news" target="_blank">Перейти в Telegram</a>
+    </div>
+    <div id="content-en" style="display:none;">
+      <h1>Master ChatGPT, Gemini, Grok and Other LLMs</h1>
+      <p>A hands-on course for beginners: automation, content creation, AI tools, and real-world projects. Join and learn how to apply AI in practice.</p>
+      <a class="telegram-button" href="https://t.me/neuronica_news" target="_blank">Go to Telegram</a>
+    </div>
+  </div>
+  <script>
+    function setLang(lang) {
+      document.getElementById('content-ru').style.display = lang === 'ru' ? 'block' : 'none';
+      document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
