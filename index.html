@@ -11,8 +11,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #f0e6ff, #e6f7ff);
-      color: #111;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #e0e0e0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -20,50 +20,70 @@
       min-height: 100vh;
       text-align: center;
       padding: 1.5rem;
+      background-size: 400% 400%;
+      animation: gradientMove 20s ease infinite;
     }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
     .container {
       max-width: 720px;
     }
+
     h1 {
       font-size: 2.4rem;
       margin-bottom: 1rem;
-      background: linear-gradient(90deg, #00ffe7, #00bfff);
+      background: linear-gradient(90deg, #00ffe7, #0077ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px rgba(0,255,255,0.3);
     }
+
     p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       line-height: 1.6;
       margin-bottom: 2rem;
       color: #ccc;
     }
+
     .btn {
       display: inline-block;
-      padding: 0.9rem 2rem;
-      background: #0088cc;
+      padding: 1rem 2rem;
+      background: #00bfff;
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
-      transition: background 0.3s ease;
+      font-size: 1rem;
+      box-shadow: 0 0 12px rgba(0, 191, 255, 0.4);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
+
     .btn:hover {
-      background: #0077b3;
+      background: #0099cc;
+      box-shadow: 0 0 18px rgba(0, 191, 255, 0.7);
     }
+
     .lang-switch {
       position: fixed;
       top: 1rem;
       right: 1rem;
     }
+
     .lang-switch button {
-      background: #1c1c1c;
-      border: 1px solid #444;
+      background: #1e1e1e;
+      border: 1px solid #555;
       color: #eee;
       padding: 0.4rem 0.8rem;
       margin-left: 0.4rem;
       cursor: pointer;
       border-radius: 6px;
     }
+
     .lang-switch button:hover {
       background: #333;
     }
@@ -78,13 +98,13 @@
   <div class="container">
     <div id="content-ru">
       <h1>Освой ChatGPT, Gemini, Grok и другие AI-модели</h1>
-      <p>Быстрый и практичный курс для тех, кто хочет понять, как использовать искусственный интеллект в реальной жизни. Без теории — только практика.</p>
+      <p>Практический курс для тех, кто хочет использовать искусственный интеллект в работе и жизни. Только практика — никаких заумных лекций.</p>
       <a href="https://t.me/neuronica_news" target="_blank" class="btn">Перейти в Telegram</a>
     </div>
 
     <div id="content-en" style="display: none;">
       <h1>Master ChatGPT, Gemini, Grok and other AI models</h1>
-      <p>A fast and practical course for beginners who want to learn how to use artificial intelligence in real life. No fluff — just hands-on practice.</p>
+      <p>A practical course for those who want to use AI in work and life. Only hands-on tools — no useless theory.</p>
       <a href="https://t.me/neuronica_news" target="_blank" class="btn">Go to Telegram</a>
     </div>
   </div>
