@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -28,17 +27,36 @@
 
     h1 {
       font-size: 2.4rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       background: linear-gradient(90deg, #00ffe7, #0077ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 12px rgba(0,255,255,0.3);
     }
 
-    p {
-      font-size: 1.15rem;
-      line-height: 1.6;
+    h2 {
+      font-size: 1.4rem;
+      font-weight: normal;
+      margin-bottom: 1.5rem;
+      color: #aaa;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
       margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    ul li::before {
+      content: "✓";
+      color: #00bfff;
+      margin-right: 0.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
       color: #ccc;
     }
 
@@ -53,6 +71,7 @@
       font-size: 1rem;
       box-shadow: 0 0 12px rgba(0, 191, 255, 0.4);
       transition: background 0.3s ease, box-shadow 0.3s ease;
+      margin: 0.5rem;
     }
 
     .btn:hover {
@@ -89,16 +108,46 @@
 
   <div class="container">
     <div id="content-ru">
-      <h1>Освой ChatGPT, Gemini, Grok и другие AI-модели</h1>
-      <p>Практический курс для тех, кто хочет использовать искусственный интеллект в работе и жизни. Только практика — никаких заумных лекций.</p>
-      <a href="https://t.me/neuronica_news" target="_blank" class="btn">Перейти в Telegram</a>
+      <h1>Освой ChatGPT, Gemini, Grok и другие AI-инструменты</h1>
+      <h2>Курс, с которым ты начнёшь использовать ИИ на практике — без лишней теории</h2>
+      <ul>
+        <li>Создай контент и визуал с ИИ за 15 минут</li>
+        <li>Запусти Telegram-бота и лендинг без программиста</li>
+        <li>Продавай с помощью Reels, Shorts и автоответов</li>
+      </ul>
+      <a href="https://t.me/neuronica_news" target="_blank" class="btn">Перейти в Telegram-канал</a>
+      <a href="#program" class="btn">Посмотреть программу курса</a>
+      <a href="https://t.me/aiNeuronicaBot" target="_blank" class="btn">Запустить курс в Telegram</a>
     </div>
 
     <div id="content-en" style="display: none;">
-      <h1>Master ChatGPT, Gemini, Grok and other AI models</h1>
-      <p>A practical course for those who want to use AI in work and life. Only hands-on tools — no useless theory.</p>
-      <a href="https://t.me/neuronica_news" target="_blank" class="btn">Go to Telegram</a>
+      <h1>Master ChatGPT, Gemini, Grok and other AI tools</h1>
+      <h2>Learn to use AI tools like a pro — no boring theory, only practical steps</h2>
+      <ul>
+        <li>Create content and visuals in 15 minutes with AI</li>
+        <li>Launch a bot and landing page with zero coding</li>
+        <li>Sell using Reels, Shorts and auto-replies</li>
+      </ul>
+      <a href="https://t.me/neuronica_news" target="_blank" class="btn">Go to Telegram channel</a>
+      <a href="#program" class="btn">View Course Program</a>
+      <a href="https://t.me/aiNeuronicaBot" target="_blank" class="btn">Start Course in Telegram</a>
     </div>
+  </div>
+
+  <div id="program" style="margin-top: 4rem; max-width: 720px; text-align: left;">
+    <h2 style="color: #00ffe7;">Программа курса</h2>
+    <ul>
+      <li><strong>Модуль 1:</strong> Обзор ИИ + Подбор инструментов</li>
+      <li><strong>Модуль 2:</strong> Промпты, оформление профиля, визуал</li>
+      <li><strong>Модуль 3:</strong> Контент-план, Reels, озвучка</li>
+      <li><strong>Модуль 4:</strong> Видео с ИИ, мемы, лендинг</li>
+      <li><strong>Модуль 5:</strong> Боты, реклама, креативы</li>
+      <li><strong>Модуль 6:</strong> Системность, трафик, запуск</li>
+    </ul>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=dkvgit.ai-course" alt="visitor badge"/>
   </div>
 
   <script>
@@ -107,13 +156,5 @@
       document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
     }
   </script>
-
-  <div style="margin-top: 2rem;">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=dkvgit.ai-course" alt="visitor badge"/>
-</div>
-
-
-  
 </body>
 </html>
-
