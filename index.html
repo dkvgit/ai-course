@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>AI Course — ChatGPT, Gemini, Grok и другие</title>
+  <title>AI Course — для начинающих</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Практический курс по ChatGPT, Grok, Gemini и другим LLM для начинающих. Освой современные AI-инструменты и автоматизируй задачи." />
+  <meta name="description" content="Практический курс по ChatGPT, Grok, Gemini и другим ИИ-инструментам. С нуля — до продвижения." />
   <link rel="icon" href="https://www.svgrepo.com/show/382106/ai.svg" type="image/svg+xml" />
   <style>
     body {
@@ -12,31 +12,27 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to right, #0c0124, #1b1b2f);
       color: #e0e0e0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem 1rem;
     }
 
     .container {
       max-width: 720px;
+      margin: auto;
     }
 
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       margin-bottom: 0.5rem;
       background: linear-gradient(90deg, #00ffe7, #0077ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+      text-shadow: 0 0 10px rgba(0,255,255,0.2);
     }
 
     h2 {
-      font-size: 1.4rem;
-      font-weight: normal;
+      font-size: 1.25rem;
+      font-weight: 400;
       margin-bottom: 1.5rem;
       color: #aaa;
     }
@@ -44,8 +40,15 @@
     ul {
       list-style: none;
       padding: 0;
-      margin-bottom: 2rem;
+      margin: 0 auto 2rem;
+      max-width: 480px;
       text-align: left;
+    }
+
+    ul li {
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+      color: #ccc;
     }
 
     ul li::before {
@@ -54,110 +57,79 @@
       margin-right: 0.5rem;
     }
 
-    ul li {
-      margin-bottom: 0.75rem;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
     .btn {
       display: inline-block;
       padding: 1rem 2rem;
       background: #00bfff;
-      color: #fff;
+      color: white;
       text-decoration: none;
       border-radius: 10px;
       font-weight: bold;
-      font-size: 1rem;
-      box-shadow: 0 0 12px rgba(0, 191, 255, 0.4);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      margin: 0.5rem;
+      font-size: 1.1rem;
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+      transition: all 0.3s ease;
+      margin: 1rem auto;
     }
 
     .btn:hover {
       background: #0099cc;
-      box-shadow: 0 0 18px rgba(0, 191, 255, 0.7);
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
     }
 
-    .lang-switch {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
+    #program {
+      text-align: left;
+      max-width: 720px;
+      margin: 3rem auto 2rem;
     }
 
-    .lang-switch button {
-      background: #1e1e1e;
-      border: 1px solid #555;
-      color: #eee;
-      padding: 0.4rem 0.8rem;
-      margin-left: 0.4rem;
-      cursor: pointer;
-      border-radius: 6px;
+    #program h2 {
+      color: #00ffe7;
     }
 
-    .lang-switch button:hover {
-      background: #333;
+    .footer {
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <div class="lang-switch">
-    <button onclick="setLang('ru')">RU</button>
-    <button onclick="setLang('en')">EN</button>
-  </div>
 
   <div class="container">
-    <div id="content-ru">
-      <h1>Освой ChatGPT, Gemini, Grok и другие AI-инструменты</h1>
-      <h2>Курс, с которым ты начнёшь использовать ИИ на практике — без лишней теории</h2>
-      <ul>
-        <li>Создай контент и визуал с ИИ за 15 минут</li>
-        <li>Запусти Telegram-бота и лендинг без программиста</li>
-        <li>Продавай с помощью Reels, Shorts и автоответов</li>
-      </ul>
-      <a href="https://t.me/neuronica_news" target="_blank" class="btn">Перейти в Telegram-канал</a>
-      <a href="#program" class="btn">Посмотреть программу курса</a>
-      <a href="https://t.me/aiNeuronicaBot" target="_blank" class="btn">Запустить курс в Telegram</a>
-    </div>
+    <h1>AI-курс: научись использовать ChatGPT и нейросети</h1>
+    <h2>Для новичков, кто хочет продвигать товары и зарабатывать с помощью ИИ</h2>
 
-    <div id="content-en" style="display: none;">
-      <h1>Master ChatGPT, Gemini, Grok and other AI tools</h1>
-      <h2>Learn to use AI tools like a pro — no boring theory, only practical steps</h2>
-      <ul>
-        <li>Create content and visuals in 15 minutes with AI</li>
-        <li>Launch a bot and landing page with zero coding</li>
-        <li>Sell using Reels, Shorts and auto-replies</li>
-      </ul>
-      <a href="https://t.me/neuronica_news" target="_blank" class="btn">Go to Telegram channel</a>
-      <a href="#program" class="btn">View Course Program</a>
-      <a href="https://t.me/aiNeuronicaBot" target="_blank" class="btn">Start Course in Telegram</a>
-    </div>
+    <ul>
+      <li>Промпты, сторис, видео — за 15 минут</li>
+      <li>ИИ создаёт визуал, текст и голос</li>
+      <li>Лендинг, бот и контент — без кода</li>
+    </ul>
+
+    <!-- WebApp кнопка -->
+    <script async src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+      function openTelegramWebApp() {
+        window.Telegram.WebApp.openTelegramLink("https://t.me/aiNeuronicaBot?start=webapp");
+      }
+    </script>
+    <a class="btn" onclick="openTelegramWebApp()">Запустить курс в Telegram</a>
+
+    <a href="#program" class="btn">Программа курса</a>
   </div>
 
-  <!-- Программа курса -->
-  <div id="program" style="margin-top: 4rem; max-width: 720px; text-align: left;">
-    <h2 style="color: #00ffe7;">Программа курса</h2>
+  <div id="program" class="container">
+    <h2>Что ты получишь</h2>
     <ul>
-      <li><strong>Модуль 1:</strong> Обзор ИИ + Подбор инструментов</li>
-      <li><strong>Модуль 2:</strong> Промпты, оформление профиля, визуал</li>
-      <li><strong>Модуль 3:</strong> Контент-план, Reels, озвучка</li>
-      <li><strong>Модуль 4:</strong> Видео с ИИ, мемы, лендинг</li>
-      <li><strong>Модуль 5:</strong> Боты, реклама, креативы</li>
-      <li><strong>Модуль 6:</strong> Системность, трафик, запуск</li>
+      <li><strong>Модуль 1:</strong> Обзор нейросетей, ChatGPT, Gemini</li>
+      <li><strong>Модуль 2:</strong> Промпты, оформление, визуал</li>
+      <li><strong>Модуль 3:</strong> Контент-план, сценарии, озвучка</li>
+      <li><strong>Модуль 4:</strong> Видео, мемы, лендинг</li>
+      <li><strong>Модуль 5:</strong> Боты, автоответы, реклама</li>
+      <li><strong>Модуль 6:</strong> Органика, запуск, системность</li>
     </ul>
   </div>
 
-  <!-- Счетчик -->
-  <div style="margin-top: 2rem;">
-    <img src="https://visitor-badge.laobi.icu/badge?page_id=dkvgit.ai-course" alt="visitor badge"/>
+  <div class="footer">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=aiNeuronicaBot" alt="visitor badge" />
   </div>
 
-  <!-- Скрипт переключения языка -->
-  <script>
-    function setLang(lang) {
-      document.getElementById('content-ru').style.display = lang === 'ru' ? 'block' : 'none';
-      document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
-    }
-  </script>
 </body>
 </html>
