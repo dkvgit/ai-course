@@ -21,7 +21,6 @@
   <meta name="twitter:title" content="Нейросети без паники — Мини-курс" />
   <meta name="twitter:description" content="Создавай контент, сторис, лендинги и голос — с помощью ChatGPT и нейросетей." />
   
-
   <!-- Favicon -->
   <link rel="icon" href="https://www.svgrepo.com/show/382106/ai.svg" type="image/svg+xml" />
 
@@ -87,13 +86,25 @@
       font-size: 1.1rem;
       box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
       transition: all 0.3s ease;
-      margin: 1rem auto;
+      margin: 1rem 0.5rem;
       cursor: pointer;
+      border: none;
     }
 
     .btn:hover {
       background: #0099cc;
       box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #00bfff;
+      color: #00bfff;
+    }
+
+    .btn-secondary:hover {
+      background: #00bfff;
+      color: white;
     }
 
     #program {
@@ -104,10 +115,21 @@
 
     #program h2 {
       color: #00ffe7;
+      text-align: center;
     }
 
     .footer {
       margin-top: 2rem;
+    }
+
+    .buttons-container {
+      margin: 2rem 0;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -123,35 +145,82 @@
       <li>Без кода: лендинг, боты и автопостинг</li>
     </ul>
 
-    <!-- WebApp кнопка -->
-    <script async src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-      function openTelegramWebApp() {
-        window.Telegram.WebApp.openTelegramLink("https://t.me/neuronica_gpt_bot?start=webapp");
-      }
-    </script>
-    <a class="btn" onclick="openTelegramWebApp()">Запустить курс в Telegram</a>
+    <div class="buttons-container">
+      <!-- Основная кнопка для перехода к боту -->
+      <a href="https://t.me/neuronica_gpt_bot?start=landing" class="btn" id="mainBtn">
+        🚀 Начать курс в Telegram
+      </a>
+      
+      <!-- Альтернативная кнопка -->
+      <a href="#program" class="btn btn-secondary">📋 Программа курса</a>
+    </div>
 
-    <a href="#program" class="btn">Программа курса</a>
+    <div class="note">
+      💡 Курс проходит в удобном Telegram-боте с видеоуроками
+    </div>
   </div>
 
   <div id="program" class="container">
     <h2>Что ты изучишь</h2>
     <ul>
+      <li><strong>Урок 0:</strong> Введение в курс</li>
       <li><strong>Урок 1:</strong> Знакомство с ChatGPT</li>
       <li><strong>Урок 2:</strong> Первый запуск и настройка</li>
-      <li><strong>Урок 3:</strong> Повседневное использование ChatGPT </li>
-      <li><strong>Урок 4:</strong> Программирование инаставничество</li>
+      <li><strong>Урок 3:</strong> Повседневное использование ChatGPT</li>
+      <li><strong>Урок 4:</strong> Программирование и наставничество</li>
       <li><strong>Урок 5:</strong> Как правильно задавать запросы</li>
       <li><strong>Урок 6:</strong> Работа с данными</li>
-      <li><strong>Урок 7:</strong> Ограничение и безопасность</li>
-      <li><strong>Урок 8:</strong> Финал и обратная связь</li>
+      <li><strong>Урок 7:</strong> Ограничения и безопасность</li>
+      <li><strong>Урок 8:</strong> Обратная связь</li>
     </ul>
+
+    <div class="buttons-container">
+      <a href="https://t.me/neuronica_gpt_bot?start=program" class="btn">
+        ▶️ Начать обучение
+      </a>
+    </div>
   </div>
 
   <div class="footer">
     <img src="https://visitor-badge.laobi.icu/badge?page_id=neuronica_gpt_bot" alt="visitor badge" />
   </div>
+
+  <!-- Проверка на запуск из Telegram WebApp -->
+  <script>
+    // Проверяем, запущено ли в Telegram WebApp
+    if (window.Telegram && window.Telegram.WebApp) {
+      // Если запущено в WebApp, скрываем кнопки перехода к боту
+      document.addEventListener('DOMContentLoaded', function() {
+        const mainBtn = document.getElementById('mainBtn');
+        if (mainBtn) {
+          mainBtn.style.display = 'none';
+        }
+        
+        // Показываем сообщение о том, что пользователь уже в боте
+        const note = document.querySelector('.note');
+        if (note) {
+          note.innerHTML = '✅ Вы уже в боте! Вернитесь назад для начала курса.';
+        }
+      });
+
+      // Настраиваем WebApp
+      window.Telegram.WebApp.ready();
+      window.Telegram.WebApp.expand();
+    }
+
+    // Функция для отслеживания кликов по кнопкам
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('a[href*="t.me"]');
+      buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          // Добавляем небольшую задержку для лучшего UX
+          setTimeout(() => {
+            console.log('Переход к боту:', this.href);
+          }, 100);
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
