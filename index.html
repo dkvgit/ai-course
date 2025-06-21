@@ -211,6 +211,14 @@
       font-weight: 600;
       box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
     }
+    .visitor-counter {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -218,12 +226,12 @@
     <h1>Мини-курс «Нейросети без паники: простой старт с ChatGPT»</h1>
     <h2>Научись использовать ChatGPT, создавать контент и запускать нейросети — с нуля</h2>
     
-    <div class="price-badge">💰 Стоимость: 1000₽ / 10 EUR / 10 USDT</div>
+    <div class="price-badge">💰 Стоимость: 10 USDT / 1000₽ / 10 EUR</div>
     
     <ul>
-      <li>Создавай сторис, тексты и видео за 15 минут</li>
-      <li>Генерируй голос, визуал и идеи с помощью ИИ</li>
-      <li>Без кода: лендинг, боты и автопостинг</li>
+      <li>Освой ChatGPT от первого запуска до профессионального использования</li>
+      <li>Научись задавать правильные запросы и получать точные ответыИ</li>
+      <li>Используй ИИ для создания контента и дополнительного заработка</li>
     </ul>
     
     <div class="buttons-container">
@@ -231,10 +239,7 @@
       <a href="#program" class="btn btn-secondary">📋 Программа курса</a>
     </div>
     
-    <div class="note">
-      💡 Курс проходит в удобном Telegram-боте с видеоуроками. Если Telegram не работает — смотри ниже ⬇️
-    </div>
-  </div>
+    
 
   <div class="container">
     <div class="payment-section">
@@ -368,10 +373,29 @@
   </div>
 
   <div class="footer">
-    <img src="https://visitor-badge.laobi.icu/badge?page_id=neuronica_gpt_bot" alt="visitor badge" />
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=neuronica_gpt_landing" alt="visitor badge" />
+    <div class="visitor-counter">
+      👥 Посетители: <span id="visitor-count">Loading...</span>
+    </div>
   </div>
 
   <script>
+    // Счетчик посетителей
+    function updateVisitorCount() {
+      const visited = localStorage.getItem('visited');
+      const visitorCount = localStorage.getItem('visitorCount') || 1247; // Начальное значение
+      
+      if (!visited) {
+        const newCount = parseInt(visitorCount) + 1;
+        localStorage.setItem('visitorCount', newCount);
+        localStorage.setItem('visited', 'true');
+        document.getElementById('visitor-count').textContent = newCount;
+      } else {
+        document.getElementById('visitor-count').textContent = visitorCount;
+      }
+    }
+
+    // Telegram WebApp support
     if (window.Telegram && window.Telegram.WebApp) {
       document.addEventListener('DOMContentLoaded', function() {
         const mainBtn = document.getElementById('mainBtn');
@@ -386,6 +410,9 @@
       window.Telegram.WebApp.ready();
       window.Telegram.WebApp.expand();
     }
+
+    // Инициализация счетчика
+    document.addEventListener('DOMContentLoaded', updateVisitorCount);
   </script>
 </body>
 </html>
